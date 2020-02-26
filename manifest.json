@@ -2,6 +2,7 @@
   "browser_action": {
     "browser_style": true,
     "default_title": "List Finder",
+	"default_popup": "popup.html",
     "default_icon": {
       "48": "icons/icon48dp.png"
     }
