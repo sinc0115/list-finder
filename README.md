@@ -11,3 +11,4 @@ This allows for quicker QA, without missing a list.
 * Notify user if there are no lists on the page
 * Display number of lists on page
 * Provide links to jump to each list
+* Improve accessiblity
