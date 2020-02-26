@@ -1,0 +1,14 @@
+main {
+	font-family: arial, sans-serif;
+	font-size: 1rem;
+	background-color: #fafafa;
+	margin: 0.5rem;
+	padding: 2rem;
+}
+
+button {
+	font-size: 1rem;
+	padding: 0.5rem;
+	background-color: pink;
+	border: 2px solid white;
+}
