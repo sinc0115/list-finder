@@ -4,7 +4,7 @@ var $ulList = document.querySelectorAll('ul')
 var $olList = document.querySelectorAll('ol')
 var $dlList = document.querySelectorAll('dl')
 
-function distortFilter() {
+function addListBorders() {
     if (ext == false) { 
 		
 		for (let $ul of $ulList) {
@@ -35,4 +35,13 @@ function distortFilter() {
 	}
 } 
 
-browser.runtime.onConnect.addListener(distortFilter);
+// This works without the popup
+ //browser.runtime.onConnect.addListener(addListBorders);
+
+// This make the popup work
+const $button = document.getElementById('showList')
+const CSS = "body { border: 20px solid red; }";
+
+$button.addEventListener('click', function() {
+	 browser.tabs.executeScript({code: 'addListBorders()'});
+})
