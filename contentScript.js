@@ -40,7 +40,6 @@ function addListBorders() {
 
 // This make the popup work
 const $button = document.getElementById('showList')
-const CSS = "body { border: 20px solid red; }";
 
 $button.addEventListener('click', function() {
 	 browser.tabs.executeScript({code: 'addListBorders()'});
