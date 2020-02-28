@@ -1,8 +1,10 @@
-ext = false;
+ext = false
 
 var $ulList = document.querySelectorAll('ul')
 var $olList = document.querySelectorAll('ol')
 var $dlList = document.querySelectorAll('dl')
+const $button = document.getElementById('showList')
+const $textHere = document.getElementById('text-here')
 
 function addListBorders() {
     if (ext == false) { 
@@ -35,12 +37,42 @@ function addListBorders() {
 	}
 } 
 
+function listCounter() {
+	if (ext == false) {
+		$textHere.innerHTML = `<p>` + 'UL Lists: ' + $ulList.length + `</p>`
+	} else if (ext == true) {
+		$textHere.innerHTML = ''
+	}
+}
+
+// Works here
+console.log($ulList)
+console.log($ulList.length)
+
+
 // This works without the popup
- //browser.runtime.onConnect.addListener(addListBorders);
+//// browser.runtime.onConnect.addListener(addListBorders);
 
-// This make the popup work
-const $button = document.getElementById('showList')
-
+ 
+// This makes the popup work
 $button.addEventListener('click', function() {
-	 browser.tabs.executeScript({code: 'addListBorders()'});
+	 browser.tabs.executeScript({code: 'addListBorders()'})
+	 
+	 if (ext == false) {	
+		$button.textContent = 'Hide Lists'
+		
+		// Broken - does not interact with page content
+		listCounter()
+		
+		ext = true
+		
+	} else if (ext == true) {
+		$button.textContent = 'Show Lists'
+		
+		//Broken
+		listCounter()
+		
+		ext = false
+	}
+	 
 })
