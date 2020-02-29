@@ -10,13 +10,13 @@ function addListBorders() {
     if (ext == false) { 
 		
 		for (let $ul of $ulList) {
-			$ul.style.border = "5px solid pink"
+			$ul.style.border = "5px solid blue"
 		}
 		for (let $ol of $olList) {
-			$ol.style.border = "5px solid pink"
+			$ol.style.border = "5px solid blue"
 		}
 		for (let $dl of $dlList) {
-			$dl.style.border = "5px solid hotpink"
+			$dl.style.border = "5px solid lightblue"
 		}
 		
 		ext = true
